@@ -1,0 +1,64 @@
+create sequence usuario_seq;
+create sequence centro_dist_seq;
+create sequence produto_seq;
+create sequence estoque_seq;
+create sequence movimentacao_seq;
+
+create table usuario(
+	id bigint not null default nextval('usuario_seq'),
+	nome varchar(50) not null,
+	email varchar(50) not null unique,
+	senha varchar(255) not null unique,
+	cargo varchar(50) not null,
+	primary key(id)
+);
+
+create table centro_distribuicao(
+	id bigint not null default nextval('centro_dist_seq'),
+	nome varchar(50) not null,
+	endereco varchar(100) not null,
+	cidade varchar(50) not null,
+	uf varchar(2) not null,
+	cep varchar(9) not null,
+	primary key(id)
+);
+
+create table produto(
+	id bigint not null default nextval('produto_seq'),
+	nome varchar(50) not null,
+	categoria varchar(40) not null,
+	unidade float not null,
+	primary key(id)
+);
+
+create table estoque(
+	id bigint not null default nextval('estoque_seq'),
+	produto_id bigint,
+	cd_id bigint,
+	quantidade bigint,
+	primary key(id),
+	constraint fk_estoque_produto foreign key (produto_id)
+	references produto(id) on delete cascade,
+	constraint fk_estoque_cd foreign key (cd_id)
+	references centro_distribuicao(id) on delete cascade
+);
+
+create table movimentacao(
+	id bigint not null default nextval('movimentacao_seq'),
+	origem_cd_id bigint,
+	destino_cd_id bigint,
+	produto_id bigint,
+	quantidade bigint,
+	data date,
+	status int,
+	primary key(id),
+	constraint fk_movimentacao_produto foreign key (produto_id)
+	references produto(id) on delete cascade,
+	constraint fk_movimentacao_origem_cd foreign key (origem_cd_id)
+	references centro_distribuicao(id) on delete cascade,
+	constraint fk_movimentacao_destino_cd foreign key (destino_cd_id)
+	references centro_distribuicao(id) on delete cascade
+);
+
+
+
