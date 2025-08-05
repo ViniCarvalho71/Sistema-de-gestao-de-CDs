@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+        xmlns="urn:nhibernate-mapping-2.2"
+        namespace="GestaoCD.Models"
+        assembly="GestaoCD">
+
+    <class name="Usuario" lazy="false" table="usuarios">
+        <id name="Id" column="id" type="long">
+            <generator class="sequence">
+                <param name="sequence">usuarios_seq</param>
+            </generator>
+        </id>
+
+        <property name="Nome"	type="string" length="100" not-null="true" />
+        <property name="Email"	type="string" length="254" unique="true"/>
+        <property name="Senha" type="string"	length="255" not-null="true"  />
+        <property name="Cargo"	type="string" length="50" not-null="true" />
+
+        <bag name="Dividas" lazy="false" generic="true" inverse ="true"
+             cascade="none">
+            <key column="clienteid" />
+            <one-to-many class="Divida"/>
+        </bag>
+
+    </class>
+
+</hibernate-mapping>

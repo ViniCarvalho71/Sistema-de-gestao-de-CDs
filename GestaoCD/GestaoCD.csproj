@@ -13,4 +13,9 @@
     <PackageReference Include="Scalar.AspNetCore" Version="2.6.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="hibernate.cfg.xml" />
+    <EmbeddedResource Include="hibernate.cfg.xml" />
+  </ItemGroup>
+
 </Project>
