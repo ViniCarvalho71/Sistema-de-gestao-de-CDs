@@ -41,17 +41,13 @@ Gerenciar entrada e saída de mercadorias entre Centros de Distribuição (CDs) 
 
 ### Backend (.NET 8)
 - ASP.NET Core Web API
-- Identity ou JWT personalizado
-- Entity Framework Core
+- NHibernate
 - PostgreSQL
 - Integração com APIs externas
 - Swagger
 
 ### Frontend (React)
 - React + Vite
-- React Router DOM
-- Axios
-- Tailwind CSS ou Material UI
 - Mapa (Leaflet ou Google Maps)
 - Gráficos com Recharts
 
