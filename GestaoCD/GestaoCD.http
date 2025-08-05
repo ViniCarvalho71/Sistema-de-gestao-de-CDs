@@ -1,0 +1,6 @@
+@GestaoCD_HostAddress = http://localhost:5211
+
+GET {{GestaoCD_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
