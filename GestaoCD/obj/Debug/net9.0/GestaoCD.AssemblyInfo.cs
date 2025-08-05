@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestaoCD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65b5bf221fb0689855176ee6030f91358de6e26d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71e7cb5a9d1fe81c6b4cc8ba733c133be950eea5")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestaoCD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestaoCD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

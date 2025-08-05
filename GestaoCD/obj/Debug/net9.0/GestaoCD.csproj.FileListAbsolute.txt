@@ -50,3 +50,4 @@
 /home/crazypotato710/RiderProjects/Sistema-de-gestao-de-CDs/GestaoCD/obj/Debug/net9.0/GestaoCD.genruntimeconfig.cache
 /home/crazypotato710/RiderProjects/Sistema-de-gestao-de-CDs/GestaoCD/obj/Debug/net9.0/ref/GestaoCD.dll
 /home/crazypotato710/RiderProjects/Sistema-de-gestao-de-CDs/GestaoCD/bin/Debug/net9.0/Scalar.AspNetCore.dll
+/home/crazypotato710/RiderProjects/Sistema-de-gestao-de-CDs/GestaoCD/bin/Debug/net9.0/hibernate.cfg.xml

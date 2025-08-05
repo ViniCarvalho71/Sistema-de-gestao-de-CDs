@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+        namespace="GestaoCD.Models"
+        assembly="GestaoCD">
+
+    <class name="Estoque" lazy="false" table="estoques">
+        <id name="Id" column="id" type="long">
+            <generator class="sequence">
+                <param name="sequence">estoque_seq</param>
+            </generator>
+        </id>
+
+        <property name="Quantidade" type="int" not-null="true" />
+        <property name="Data" type="DateTime" not-null="true" />
+        <property name="Status" type="int" not-null="true" />
+
+        <many-to-one name="Produto"
+                     column="produto_id"
+                     fetch="join"
+                     foreign-key="fk_movimentacao_produto" />
+        <many-to-one name="CentroDistribuicao"
+                     column="origem_cd_id"
+                     fetch="join"
+                     foreign-key="fk_movimentacao_origem_cd" />
+        <many-to-one name="CentroDistribuicao"
+                     column="destino_cd_id"
+                     fetch="join"
+                     foreign-key="fk_movimentacao_destino_cd" />
+
+    </class>
+
+</hibernate-mapping>

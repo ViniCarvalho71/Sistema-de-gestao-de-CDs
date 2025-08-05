@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+        namespace="GestaoCD.Models"
+        assembly="GestaoCD">
+
+    <class name="Produto" lazy="false" table="produtos">
+        <id name="Id" column="id" type="long">
+            <generator class="sequence">
+                <param name="sequence">produto_seq</param>
+            </generator>
+        </id>
+
+        <property name="Nome"	type="string" length="50" not-null="true" />
+        <property name="Categoria" type="string"	length="255" not-null="true"  />
+        <property name="Unidade"	type="float" not-null="true" />
+
+        <many-to-one name="Usuario"
+                     column="usuario_id"
+                     fetch="join"
+                     foreign-key="fk_produto_usuario" />
+
+    </class>
+
+</hibernate-mapping>

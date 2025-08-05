@@ -14,8 +14,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Mappings\CentroDistribuicao.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Estoque.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Movimentacao.hbm.xml" />
     <None Remove="hibernate.cfg.xml" />
-    <EmbeddedResource Include="hibernate.cfg.xml" />
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Mapeamentos\Usuario.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Usuario.hbm.xml" />
+    <None Remove="Mapeamentos\Produto.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Produto.hbm.xml" />
   </ItemGroup>
 
 </Project>
